@@ -1,0 +1,105 @@
+<div class="container py-5">
+
+  <h1 class="text-center mb-5">Angular Contact Form</h1>
+
+  <!-- CONTACT FORM WITH VALIDATORS -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">
+          <h5 class="mb-0">Contact Us</h5>
+        </div>
+        <div class="card-body">
+
+          <!-- Success alert -->
+          <div *ngIf="submitSuccess" class="alert alert-success">
+            Message sent successfully!
+          </div>
+
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+            <!-- Name -->
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                [class.is-invalid]="isInvalid('name')"
+                [class.is-valid]="!isInvalid('name') && f['name'].dirty"
+                formControlName="name"
+                placeholder="Your name">
+              <div class="invalid-feedback">
+                <span *ngIf="f['name'].errors?.['required']">Name is required.</span>
+                <span *ngIf="f['name'].errors?.['minlength']">Minimum 3 characters.</span>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                [class.is-invalid]="isInvalid('email')"
+                [class.is-valid]="!isInvalid('email') && f['email'].dirty"
+                formControlName="email"
+                placeholder="Your email">
+              <div class="invalid-feedback">
+                <span *ngIf="f['email'].errors?.['required']">Email is required.</span>
+                <span *ngIf="f['email'].errors?.['email']">Enter a valid email address.</span>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea
+                class="form-control"
+                rows="4"
+                [class.is-invalid]="isInvalid('message')"
+                [class.is-valid]="!isInvalid('message') && f['message'].dirty"
+                formControlName="message"
+                placeholder="Your message"></textarea>
+              <div class="invalid-feedback">
+                <span *ngIf="f['message'].errors?.['required']">Message is required.</span>
+                <span *ngIf="f['message'].errors?.['minlength']">Minimum 10 characters.</span>
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HTTP GET - Posts from JSONPlaceholder -->
+  <div class="row">
+    <div class="col-12">
+      <h3 class="mb-3">Latest Posts <small class="text-muted fs-6">(from JSONPlaceholder API)</small></h3>
+
+      <div *ngIf="loadingPosts" class="text-center py-3">
+        <div class="spinner-border text-success" role="status"></div>
+      </div>
+
+      <div *ngIf="postError" class="alert alert-danger">{{ postError }}</div>
+
+      <div class="row g-3">
+        <div class="col-md-4" *ngFor="let post of posts">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h6 class="card-title text-capitalize">{{ post.title }}</h6>
+              <p class="card-text text-muted small">{{ post.body }}</p>
+            </div>
+            <div class="card-footer text-muted small">Post #{{ post.id }}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

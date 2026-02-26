@@ -1,0 +1,120 @@
+/* Main container styling */
+.container {
+  max-width: 1200px;
+}
+
+/* Hero title */
+h1 {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+
+/* Form card enhancement */
+.card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(46, 204, 113, 0.2) !important;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #27ae60, #229954) !important;
+  padding: 1.5rem;
+  border: none;
+}
+
+/* Form inputs */
+.form-control {
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 0.2rem rgba(46, 204, 113, 0.15);
+}
+
+.form-control.is-valid {
+  border-color: #27ae60;
+}
+
+.form-control.is-invalid {
+  border-color: #e74c3c;
+}
+
+/* Submit button */
+.btn-success {
+  background: linear-gradient(135deg, #27ae60, #229954);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+  background: linear-gradient(135deg, #229954, #1e8449);
+}
+
+/* Success alert */
+.alert-success {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb);
+  border: none;
+  border-radius: 12px;
+  color: #155724;
+  font-weight: 500;
+}
+
+/* Posts section */
+h3 {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+/* Post cards */
+.card h6 {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  line-height: 1.6;
+}
+
+.card-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  font-size: 0.85rem;
+}
+
+/* Loading spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+}
