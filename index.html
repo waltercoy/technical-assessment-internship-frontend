@@ -71,6 +71,33 @@
         </div>
     </div>
 
+    <!-- TASK 3: CONTACT FORM -->
+    <div class="container mt-5 mb-5" id="contact">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nameInput" placeholder="Your Name">
+                    <label for="nameInput">Your Name</label>
+                    <div class="invalid-feedback">Name cannot be empty.</div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="emailInput" placeholder="Your Email">
+                    <label for="emailInput">Your Email</label>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="messageInput" placeholder="Your Message"></textarea>
+                    <label for="messageInput">Your Message</label>
+                    <div class="invalid-feedback">Message cannot be empty.</div>
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-success btn-lg" onclick="submitForm()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
